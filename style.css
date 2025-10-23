@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   outline: none;
-
 }
 
 body {
@@ -14,9 +13,10 @@ body {
 .container {
   background-color: #d1d1d1;
   width: 500px;
+  max-width: 95%; /* permite reduzir em telas menores */
   border-radius: 10px;
   padding: 20px;
-  margin: 100px auto 0;
+  margin: 50px auto;
 }
 
 .add-task-area {
@@ -27,11 +27,12 @@ body {
 }
 
 .input-task {
-  flex: 1; /* faz o input crescer e ocupar todo o espaço restante */
+  flex: 1; 
   border: none;
   border-radius: 5px;
   height: 40px;
   padding-left: 10px;
+  font-size: 1rem;
 }
 
 .button-add-task {
@@ -79,10 +80,51 @@ img {
 }
 
 .task:hover img {
-  opacity: 100;
+  opacity: 1;
 }
 
 .done {
   background-color: #8fac55;
   text-decoration: line-through;
+}
+
+/* -------------------- RESPONSIVIDADE -------------------- */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    margin: 30px auto;
+  }
+
+  .add-task-area {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-task {
+    width: 100%;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .button-add-task {
+    width: 100%;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+    height: auto;
+  }
+
+  .task p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  .task img {
+    height: 1.8rem;
+  }
 }
