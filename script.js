@@ -50,7 +50,7 @@ function showTask() {
 
 // Escuta cliques dentro da lista e descobre em qual parte o usuário clicou
 completeList.addEventListener("click", (event) => {
-  const element = event.element; // elemento clicado
+  const element = event.target; // elemento clicado
   const parentLi = element.closest("li"); // o <li> correspondente
 
   if (!parentLi) return; // se clicou fora, sai da função
